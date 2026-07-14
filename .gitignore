@@ -1,0 +1,17 @@
+# Backups y archivos temporales
+*.bak
+*.antes-*
+*~
+
+# Datos generados en ejecución
+logs/*
+runtime/*
+backups/*
+
+# Playlists locales o descargadas
+playlists/*
+!playlists/.gitkeep
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
