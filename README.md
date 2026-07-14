@@ -1,34 +1,95 @@
 # Open Media Center
 
-Open Media Center es una interfaz ligera para reproducir contenido multimedia desde una terminal Linux.
+Open Media Center (OMC) es un centro multimedia ligero y modular para Linux, diseñado especialmente para equipos de bajos recursos y arquitecturas ARM.
 
-## Estado
+El proyecto nació con el objetivo de convertir una tablet Android antigua en una pequeña computadora con Alpine Linux, ofreciendo una interfaz sencilla para acceder a contenido multimedia desde una terminal.
 
-Versión en desarrollo: consultar el archivo `VERSION`.
+---
 
-## Funciones actuales
+## Características
 
-- YouTube
-- IPTV
-- Historial
-- Favoritos
-- Configuración
-- Diagnóstico
-- Reproducción mediante reproductores externos
+- Reproducción de YouTube.
+- Soporte para listas IPTV.
+- Historial de reproducción.
+- Favoritos.
+- Configuración centralizada.
+- Herramientas de diagnóstico.
+- Arquitectura modular.
+- Compatible con Alpine Linux ARMv7.
+- Bajo consumo de memoria.
 
-## Estructura
+---
 
-- `bin/`: lanzador principal
-- `lib/`: funciones compartidas
-- `modules/`: módulos de Open Media Center
-- `config/`: configuración
-- `assets/`: imágenes e iconos
-- `docs/`: documentación
+## Estructura del proyecto
 
-## Plataforma de desarrollo
+```
+OpenMediaCenter
+├── assets/
+├── bin/
+├── config/
+├── docs/
+├── lib/
+├── modules/
+├── playlists/
+├── install.sh
+├── uninstall.sh
+├── VERSION
+└── README.md
+```
 
-Desarrollado y probado inicialmente en Alpine Linux ARMv7 ejecutado dentro de una tablet Android mediante chroot.
+---
+
+## Instalación
+
+```bash
+git clone git@github.com:Josexx220/OpenMediaCenter.git
+cd OpenMediaCenter
+sudo ./install.sh
+```
+
+---
+
+## Ejecución
+
+```bash
+omc
+```
+
+---
 
 ## Estado del proyecto
 
-Proyecto experimental en desarrollo activo.
+Versión actual:
+
+```
+0.5.0-alpha3
+```
+
+Estado:
+
+**En desarrollo activo.**
+
+---
+
+## Objetivos
+
+- Mejorar la integración con YouTube.
+- Mejorar IPTV.
+- Agregar soporte para radio online.
+- Sistema de plugins.
+- Mejor instalador.
+- Compatibilidad con más distribuciones Linux.
+
+---
+
+## Autor
+
+Desarrollado por **José (Josexx220)**.
+
+Con asistencia de ChatGPT durante el diseño, documentación y desarrollo del proyecto.
+
+---
+
+## Licencia
+
+Pendiente de definir.
