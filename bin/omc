@@ -2,15 +2,14 @@
 export PATH=/system/bin:/usr/local/bin:/bin:/sbin:/usr/bin:/usr/sbin
 export HOME=/root
 
-OMC_ROOT=/root/openmediacenter-v0.5-dev
-VERSION="0.5.0-alpha3"
+OMC_ROOT=/root/openmediacenter
+VERSION="0.4.0-alpha"
 
 . "$OMC_ROOT/lib/config.sh"
 . "$OMC_ROOT/lib/ui.sh"
 . "$OMC_ROOT/lib/android.sh"
-. "$OMC_ROOT/lib/player.sh"
-. "$OMC_ROOT/lib/library.sh"
 . "$OMC_ROOT/modules/youtube.sh"
+. "$OMC_ROOT/modules/kick.sh"
 . "$OMC_ROOT/modules/iptv.sh"
 . "$OMC_ROOT/modules/history.sh"
 . "$OMC_ROOT/modules/favorites.sh"
@@ -22,7 +21,7 @@ case "${1:-}" in
     exit 0
     ;;
   doctor|--doctor)
-    omc_docto
+    omc_doctor
     exit $?
     ;;
 esac
@@ -32,11 +31,12 @@ while :; do
   omc_banner
   echo
   echo "1. YouTube"
-  echo "2. IPTV"
-  echo "3. Historial"
-  echo "4. Favoritos"
-  echo "5. Configuración"
-  echo "6. Diagnóstico"
+  echo "2. Kick"
+  echo "3. IPTV"
+  echo "4. Historial"
+  echo "5. Favoritos"
+  echo "6. Configuración"
+  echo "7. Diagnóstico"
   echo "0. Salir"
   echo
   printf "Elegí una opción: "
@@ -44,11 +44,12 @@ while :; do
 
   case "$OPTION" in
     1) youtube_menu ;;
-    2) iptv_menu ;;
-    3) history_menu ;;
-    4) favorites_menu ;;
-    5) config_menu ;;
-    6) clear; omc_doctor; omc_pause ;;
+    2) kick_menu ;;
+    3) iptv_menu ;;
+    4) history_menu ;;
+    5) favorites_menu ;;
+    6) config_menu ;;
+    7) clear; omc_doctor; omc_pause ;;
     0) exit 0 ;;
     *) echo "Opción inválida."; sleep 1 ;;
   esac
