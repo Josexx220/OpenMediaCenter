@@ -1,9 +1,21 @@
+# Backups y archivos temporales
 *.bak
+*.antes-*
 *.tmp
 *.log
 *~
 *.swp
 *.tar.gz
-runtime/
+
+# Datos generados en ejecución
 logs/
+runtime/
 backups/
+
+# Playlists locales o descargadas
+playlists/*
+!playlists/.gitkeep
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
