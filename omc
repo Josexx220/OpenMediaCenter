@@ -1,0 +1,56 @@
+#!/bin/sh
+export PATH=/system/bin:/usr/local/bin:/bin:/sbin:/usr/bin:/usr/sbin
+export HOME=/root
+
+OMC_ROOT=/root/openmediacenter
+VERSION="0.4.0-alpha"
+
+. "$OMC_ROOT/lib/config.sh"
+. "$OMC_ROOT/lib/ui.sh"
+. "$OMC_ROOT/lib/android.sh"
+. "$OMC_ROOT/modules/youtube.sh"
+. "$OMC_ROOT/modules/iptv.sh"
+. "$OMC_ROOT/modules/radios.sh"
+. "$OMC_ROOT/modules/history.sh"
+. "$OMC_ROOT/modules/favorites.sh"
+. "$OMC_ROOT/modules/doctor.sh"
+
+case "${1:-}" in
+  --version|-v|version)
+    omc_version
+    exit 0
+    ;;
+  doctor|--doctor)
+    omc_docto
+    exit $?
+    ;;
+esac
+
+while :; do
+  clear
+  omc_banner
+  echo
+  echo "1. YouTube"
+  echo "2. IPTV"
+  echo "3. Radios"
+  echo "4. Historial"
+  echo "5. Favoritos"
+  echo "6. Configuración"
+  echo "7. Diagnóstico"
+  echo "0. Salir"
+  echo
+  printf "Elegí una opción: "
+  read OPTION
+
+  case "$OPTION" in
+    1) youtube_menu ;;
+    2) iptv_menu ;;
+    3) radios_menu ;;
+    4) history_menu ;;
+    5) favorites_menu ;;
+    6) config_menu ;;
+    7) clear; omc_doctor; omc_pause ;;
+    0) exit 0 ;;
+    *) echo "Opción inválida."; sleep 1 ;;
+  esac
+done

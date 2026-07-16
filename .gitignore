@@ -1,0 +1,9 @@
+*.bak
+*.tmp
+*.log
+*~
+*.swp
+*.tar.gz
+runtime/
+logs/
+backups/
